@@ -5,13 +5,13 @@ var express = require('express');
 var app = express();
 // Express.js stuff
 var server = require('http').Server(app);
-var mongoose = require('mongoose');
-mongoose.connect(config.db);
+// var mongoose = require('mongoose');
+// mongoose.connect(config.db);
 
 // Websockets with socket.io
 var io = require('socket.io')(server);
 var jwt = require('jsonwebtoken');
-var Chat = require('./models/Chat');
+// var Chat = require('./models/Chat');
 
 console.log("Trying to start server with config:", config.serverip + ":" + config.serverport);
 
@@ -41,9 +41,9 @@ io.on('connection', function(socket) {
         console.error('Token validation failed: ' + err);
       } else {
         var userId = decoded.sub;
-        Chat.createMessage(chatId, userId, message).then(function() {
+        //Chat.createMessage(chatId, userId, message).then(function() {
           socket.broadcast.to(msg.channelID).emit('new bc message', msg);
-        }).catch(function (e) { console.error('Error while saving message: ' + e); });
+        // }).catch(function (e) { console.error('Error while saving message: ' + e); });
       }
     });
   });
