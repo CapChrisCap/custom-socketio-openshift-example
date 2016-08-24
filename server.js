@@ -6,7 +6,7 @@ var app = express();
 // Express.js stuff
 var server = require('http').Server(app);
 var mongoose = require('mongoose');
-mongoose.connect(config.db);
+mongoose.connect(config.db, { db: { nativeParser: true } });
 
 // Websockets with socket.io
 var io = require('socket.io')(server);
