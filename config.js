@@ -15,8 +15,8 @@ var Config = {
                     reconnectionAttempts: 100,
                     secure: false
                   },
-  "db": "",
-  "sharedSecret": ""
+  "db": process.env.CHAT_MONGODB || 'mongodb://localhost/myapp',
+  "sharedSecret": process.env.AUTH0_SHARED_SECRET || ''
 
 };
 
