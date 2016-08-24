@@ -5,8 +5,8 @@ var express = require('express');
 var app = express();
 // Express.js stuff
 var server = require('http').Server(app);
-// var mongoose = require('mongoose');
-// mongoose.connect(config.db);
+var mongoose = require('mongoose');
+mongoose.connect(config.db);
 
 // Websockets with socket.io
 var io = require('socket.io')(server);
