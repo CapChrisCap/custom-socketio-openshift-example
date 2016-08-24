@@ -14,7 +14,7 @@ var Config = {
                     reconnectionDelay: 2000,
                     reconnectionAttempts: 100,
                     secure: false
-                  }
+                  },
   "db": "",
   "sharedSecret": ""
 
