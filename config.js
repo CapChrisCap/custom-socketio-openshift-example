@@ -15,6 +15,9 @@ var Config = {
                     reconnectionAttempts: 100,
                     secure: false
                   }
+  "db": "",
+  "sharedSecret": ""
+
 };
 
 module.exports = Config;
